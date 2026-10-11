@@ -1,0 +1,20 @@
+{
+  "name": "caic-cinema-site",
+  "version": "1.0.0",
+  "description": "Site oficial de divulgação e download do aplicativo CAIC Cinema Streaming",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "caic-cinema",
+    "streaming",
+    "landing-page",
+    "android-app",
+    "apk",
+    "gemini-ai"
+  ],
+  "author": "marcelosevero90",
+  "license": "MIT"
+}

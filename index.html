@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- SEO Primary Meta Tags -->
+  <title>CAIC Cinema Streaming | Assista Online & Baixe o App Android</title>
+  <meta name="title" content="CAIC Cinema Streaming | Assista Online & Baixe o App Android">
+  <meta name="description" content="Conheça o CAIC Cinema: a nova plataforma de streaming inteligente com curadoria por IA (Gemini 3.8 Flash). Assista grátis pelo navegador ou baixe o app para Celular e TV Box Android!">
+  <meta name="keywords" content="CAIC Cinema, streaming grátis, filmes online, séries, curadoria IA, Gemini Flash, TV Box, Android APK, download app cinema">
+  <meta name="author" content="Marcelo Severo - CAIC Cinema">
+  <meta name="theme-color" content="#070a12">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://caic-cinema.vercel.app/">
+  <meta property="og:title" content="CAIC Cinema Streaming - Plataforma Inteligente com IA">
+  <meta property="og:description" content="Assista filmes e séries direto no seu navegador ou baixe o aplicativo para Android TV e Celular. Curadoria conversacional por IA!">
+  <meta property="og:image" content="./assets/og-image.svg">
+
+  <!-- Twitter / X -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://caic-cinema.vercel.app/">
+  <meta property="twitter:title" content="CAIC Cinema Streaming - Plataforma Inteligente com IA">
+  <meta property="twitter:description" content="Assista filmes e séries direto no seu navegador ou baixe o aplicativo para Android TV e Celular.">
+  <meta property="twitter:image" content="./assets/og-image.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfeff',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              900: '#164e63',
+            },
+            cinema: {
+              dark: '#070a12',
+              card: '#0f172a',
+              cardHover: '#1e293b',
+              accent: '#8b5cf6',
+            }
+          },
+          fontFamily: {
+            display: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-[#070a12] text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
+
+  <!-- Barra Superior de Destaque -->
+  <aside aria-label="Aviso de Lançamento" class="bg-gradient-to-r from-cyan-950 via-slate-900 to-indigo-950 border-b border-cyan-800/40 py-2 px-4 text-xs font-medium text-center text-cyan-200">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap">
+      <span class="inline-flex items-center gap-1 bg-cyan-500/20 text-cyan-300 px-2 py-0.5 rounded-full border border-cyan-500/30 text-[11px] font-bold">
+        <i data-lucide="sparkles" class="w-3 h-3 text-cyan-400"></i> NOVIDADE
+      </span>
+      <span>Plataforma Web já disponível para testes! Experimente a curadoria por Inteligência Artificial.</span>
+      <a href="https://caic-cinema.vercel.app/" target="_blank" rel="noopener noreferrer" class="underline text-white font-bold hover:text-cyan-300 transition-colors inline-flex items-center gap-1">
+        Acessar Agora <i data-lucide="arrow-right" class="w-3 h-3"></i>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Navegação Principal (Header) -->
+  <header class="sticky top-0 z-40 glass-nav transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Marca / Logo -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-cyan-500 via-indigo-600 to-fuchsia-600 p-[2px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-shadow">
+          <div class="w-full h-full bg-[#0b0f19] rounded-[14px] flex items-center justify-center">
+            <i data-lucide="film" class="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform"></i>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl font-black tracking-tight text-white font-display">
+              CA<span class="bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-400 bg-clip-text text-transparent">IC</span>
+            </span>
+            <span class="text-xs uppercase font-extrabold tracking-wider px-2 py-0.5 rounded-md bg-cyan-950 text-cyan-300 border border-cyan-700/60 font-body">
+              Cinema & IA
+            </span>
+          </div>
+          <p class="text-[11px] text-slate-400 font-medium">Streaming Inteligente</p>
+        </div>
+      </a>
+
+      <!-- Menu Desktop -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#inicio" class="hover:text-cyan-400 transition-colors">Início</a>
+        <a href="#recursos" class="hover:text-cyan-400 transition-colors">Recursos</a>
+        <a href="#ia-curador" class="hover:text-cyan-400 transition-colors">Curador IA</a>
+        <a href="#download-app" class="hover:text-cyan-400 transition-colors flex items-center gap-1.5 text-emerald-400 font-semibold">
+          <i data-lucide="smartphone" class="w-4 h-4"></i> App Android
+        </a>
+        <a href="#compatibilidade" class="hover:text-cyan-400 transition-colors">Dispositivos</a>
+        <a href="#faq" class="hover:text-cyan-400 transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Botões de Ação do Topo -->
+      <div class="flex items-center gap-3">
+        <!-- Botão Baixar APK -->
+        <button onclick="openDownloadModal()" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-cyan-500/50 text-xs font-bold transition-all">
+          <i data-lucide="download" class="w-4 h-4 text-emerald-400"></i>
+          <span>Baixar APK</span>
+        </button>
+
+        <!-- Botão Acessar Plataforma Web Principal -->
+        <a href="https://caic-cinema.vercel.app/" target="_blank" rel="noopener noreferrer" class="neon-btn-primary px-5 py-2.5 rounded-xl text-white text-xs font-extrabold tracking-wide flex items-center gap-2">
+          <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+          <span>Acessar Plataforma Web</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Banner de Notificação de Dispositivo Detectado -->
+  <div class="max-w-7xl mx-auto px-4 mt-3">
+    <div id="deviceRecommendation" class="hidden py-2 px-4 rounded-xl bg-cyan-950/60 border border-cyan-800/50 text-cyan-200 text-xs text-center flex items-center justify-center gap-2 shadow-sm">
+      <!-- Preenchido via app.js -->
+    </div>
+  </div>
+
+  <main>
+    <!-- ============================================================== -->
+    <!-- HERO SECTION                                                   -->
+    <!-- ============================================================== -->
+    <section id="inicio" class="relative pt-12 pb-24 md:pt-20 md:pb-32 overflow-hidden">
+      <!-- Efeito de Luz de Fundo -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-cyan-500/20 via-indigo-600/20 to-fuchsia-600/10 blur-[130px] pointer-events-none rounded-full"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        
+        <!-- Badge Superior -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/40 text-cyan-300 text-xs font-semibold mb-8 shadow-inner shadow-cyan-500/10">
+          <i data-lucide="sparkles" class="w-4 h-4 text-cyan-400"></i>
+          <span>POTENCIALIZADO COM GOOGLE GEMINI 3.8 FLASH</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
+        </div>
+
+        <!-- Título Principal -->
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white max-w-5xl mx-auto leading-[1.1] mb-6 font-display">
+          O Streaming que Entende o seu Gosto. <br>
+          <span class="text-gradient-cyan">Guiado por Inteligência Artificial.</span>
+        </h1>
+
+        <!-- Subtítulo -->
+        <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
+          Descubra uma experiência cinematográfica sem complicação. Peça recomendações personalizadas ao nosso <strong>Curador com IA</strong>, assista online direto pelo navegador ou instale o aplicativo na sua <strong>Smart TV Box e Celular Android</strong>.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto mb-14">
+          <!-- CTA 1: Web Player -->
+          <a href="https://caic-cinema.vercel.app/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto neon-btn-primary px-8 py-4 rounded-2xl text-white font-extrabold text-base flex items-center justify-center gap-3 group">
+            <i data-lucide="play" class="w-5 h-5 fill-current text-white group-hover:scale-110 transition-transform"></i>
+            <span>Assistir Agora no Navegador</span>
+            <i data-lucide="external-link" class="w-4 h-4 text-cyan-200"></i>
+          </a>
+
+          <!-- CTA 2: Download APK -->
+          <button onclick="openDownloadModal()" class="w-full sm:w-auto neon-btn-android px-8 py-4 rounded-2xl text-white font-extrabold text-base flex items-center justify-center gap-3">
+            <i data-lucide="smartphone" class="w-5 h-5 text-emerald-100"></i>
+            <span>Baixar App Android (APK)</span>
+            <span class="bg-emerald-950/80 text-emerald-300 text-[10px] uppercase font-black px-2 py-0.5 rounded border border-emerald-400/40">Beta</span>
+          </button>
+        </div>
+
+        <!-- Estatísticas & Badges Rápidos -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          <div class="glass-card p-4 rounded-2xl text-center">
+            <div class="text-2xl sm:text-3xl font-black text-cyan-400 font-display">+1.500</div>
+            <div class="text-xs text-slate-400 font-medium mt-1">Filmes & Séries Curados</div>
+          </div>
+          <div class="glass-card p-4 rounded-2xl text-center">
+            <div class="text-2xl sm:text-3xl font-black text-indigo-400 font-display">Gemini 3.8</div>
+            <div class="text-xs text-slate-400 font-medium mt-1">IA com Busca Estruturada</div>
+          </div>
+          <div class="glass-card p-4 rounded-2xl text-center">
+            <div class="text-2xl sm:text-3xl font-black text-emerald-400 font-display">100% D-Pad</div>
+            <div class="text-xs text-slate-400 font-medium mt-1">Feito p/ Controle de TV Box</div>
+          </div>
+          <div class="glass-card p-4 rounded-2xl text-center">
+            <div class="text-2xl sm:text-3xl font-black text-pink-400 font-display">Zero Anúncios</div>
+            <div class="text-xs text-slate-400 font-medium mt-1">Player Limpo & Seguro</div>
+          </div>
+        </div>
+
+        <!-- Vitrine Visual / Mockup Interativo -->
+        <div class="mt-16 max-w-5xl mx-auto relative group">
+          <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-indigo-500 to-fuchsia-500 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-1000"></div>
+          
+          <div class="relative rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-900/90 shadow-2xl">
+            <!-- Barra Superior do Mockup de Janela -->
+            <div class="bg-slate-950 px-4 py-3 flex items-center justify-between border-b border-slate-800">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                <span class="text-xs text-slate-400 font-mono ml-2">https://caic-cinema.vercel.app</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs text-cyan-400 font-semibold">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                Ao Vivo & Disponível
+              </div>
+            </div>
+
+            <!-- Conteúdo da Interface Representativa -->
+            <div class="p-6 md:p-8 bg-gradient-to-b from-slate-900 via-[#0b0f19] to-[#070a12] text-left">
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                
+                <!-- Lado Esquerdo: Banner do Filme em Destaque -->
+                <div class="lg:col-span-7 space-y-4">
+                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-950/80 text-indigo-300 border border-indigo-700 text-xs font-bold">
+                    <i data-lucide="film" class="w-3.5 h-3.5"></i> DESTAQUE DA SEMANA
+                  </div>
+                  <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Interestelar & Clássicos da Ficção Científica</h3>
+                  <p class="text-sm text-slate-300 leading-relaxed">
+                    Explore galáxias distantes, viagens temporais e mistérios do universo com alta fidelidade de som e imagem. Curadoria refinada para os amantes da sétima arte.
+                  </p>
+                  <div class="flex items-center gap-3 pt-2">
+                    <a href="https://caic-cinema.vercel.app/" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs flex items-center gap-2 transition-all">
+                      <i data-lucide="play" class="w-4 h-4 fill-current"></i> Dar Play Agora
+                    </a>
+                    <button onclick="openDownloadModal('tv')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold flex items-center gap-2 transition-all">
+                      <i data-lucide="tv" class="w-4 h-4 text-cyan-400"></i> Modo TV Box
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Lado Direito: Caixa Simulada do Curador de IA -->
+                <div class="lg:col-span-5 glass-glow-card rounded-2xl p-5 border border-cyan-500/30">
+                  <div class="flex items-center gap-2.5 border-b border-slate-700/60 pb-3 mb-3">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center">
+                      <i data-lucide="bot" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-xs font-bold text-white">Curador CAIC IA</h4>
+                      <p class="text-[10px] text-cyan-300">Google Gemini 3.8 Flash Ativo</p>
+                    </div>
+                  </div>
+
+                  <!-- Mensagens do Chat IA -->
+                  <div class="space-y-3 text-xs">
+                    <div class="bg-slate-800/80 p-3 rounded-xl rounded-br-none text-slate-300 ml-4 border border-slate-700">
+                      <p class="text-[10px] text-cyan-400 font-bold mb-1">Você perguntou:</p>
+                      "Quero um suspense psicológico dos anos 60 que prenda a atenção do início ao fim!"
+                    </div>
+
+                    <div class="bg-cyan-950/60 p-3 rounded-xl rounded-bl-none text-cyan-100 mr-2 border border-cyan-800/50">
+                      <p class="text-[10px] text-cyan-300 font-bold mb-1 flex items-center gap-1">
+                        <i data-lucide="sparkles" class="w-3 h-3"></i> Curador IA encontrou:
+                      </p>
+                      "Encontrei exatamente o que procura: <strong>Psicose (1960)</strong> de Alfred Hitchcock. Uma obra-prima do suspense com trilha sonora icônica. Já deixei no ponto para dar o Play!"
+                    </div>
+                  </div>
+
+                  <a href="https://caic-cinema.vercel.app/" target="_blank" rel="noopener noreferrer" class="mt-4 w-full py-2 px-3 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/40 text-cyan-200 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors">
+                    <i data-lucide="play-circle" class="w-4 h-4"></i> Assistir na Plataforma Web
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- SEÇÃO DE RECURSOS PRINCIPAIS                                   -->
+    <!-- ============================================================== -->
+    <section id="recursos" class="py-20 border-t border-slate-800/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-cyan-400 text-xs font-extrabold tracking-widest uppercase">Tecnologia & Experiência</span>
+          <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 font-display">
+            Por que o CAIC Cinema é Diferente de Tudo?
+          </h2>
+          <p class="text-slate-400 mt-4 text-base">
+            Projetado de ponta a ponta para resolver a frustração de passar horas escolhendo o que assistir e sofrer com apps pesados e cheios de anúncios.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Recurso 1: Curador IA -->
+          <div class="glass-card p-8 rounded-3xl relative group">
+            <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all">
+              <i data-lucide="brain-circuit" class="w-7 h-7 text-cyan-400"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Curadoria com Gemini 3.8 Flash</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Chega de dúvidas na hora da sessão. Fale naturalmente por voz ou texto e receba sugestões certeiras baseadas no seu humor, companhia, contexto ou época favorita.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400"></i> Busca inteligente por humor e época</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400"></i> Tool Calling integrado ao catálogo</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-cyan-400"></i> Resposta rápida em milissegundos</li>
+            </ul>
+          </div>
+
+          <!-- Recurso 2: Feito para TV Box -->
+          <div class="glass-card p-8 rounded-3xl relative group border-indigo-500/20">
+            <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-indigo-500/20 transition-all">
+              <i data-lucide="tv" class="w-7 h-7 text-indigo-400"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Navegação 100% no Controle Remoto</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Compatível com Android TV Box e Fire TV. Você navega confortavelmente do sofá usando apenas as setas (D-pad) e a tecla OK do seu controle remoto.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i> Foco luminoso visível a distância</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i> Suporte total a Leanback UI</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-indigo-400"></i> Sem precisar de mouse ou teclado</li>
+            </ul>
+          </div>
+
+          <!-- Recurso 3: Acesso Imediato Web & Mobile -->
+          <div class="glass-card p-8 rounded-3xl relative group border-emerald-500/20">
+            <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all">
+              <i data-lucide="smartphone" class="w-7 h-7 text-emerald-400"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Multiplataforma Sem Travamentos</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">
+              Acesse pelo navegador web no PC ou iPhone, ou baixe o APK nativo no seu Android. O player oficial garante reprodução estável sem consumo excessivo de dados.
+            </p>
+            <ul class="text-xs text-slate-300 space-y-2">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Funciona direto no Chrome, Safari e Edge</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Histórico sincronizado e lista de favoritos</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Degustação gratuita de 7 dias para visitantes</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- SEÇÃO ESPECÍFICA: DOWNLOAD DO APP ANDROID (APK)                -->
+    <!-- ============================================================== -->
+    <section id="download-app" class="py-24 bg-gradient-to-b from-[#070a12] via-[#090e1a] to-[#070a12] border-t border-slate-800/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-extrabold uppercase mb-3">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i> INSTALAÇÃO DIRETA VIA APK
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-black text-white font-display">
+            Baixe o CAIC Cinema no seu Android
+          </h2>
+          <p class="text-slate-400 mt-4 text-base">
+            O aplicativo nativo em versão APK está em fase de liberação exclusiva. Escolha sua versão abaixo e tenha o cinema na ponta dos dedos ou na tela da sua sala!
+          </p>
+        </div>
+
+        <!-- Grid de Cards de Download (Mobile vs TV Box) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+          
+          <!-- Opção 1: Celular e Tablet Android -->
+          <div class="glass-glow-card p-8 rounded-3xl border border-cyan-500/40 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center">
+                  <i data-lucide="smartphone" class="w-6 h-6 text-cyan-400"></i>
+                </div>
+                <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800">
+                  Android 8.0+
+                </span>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">CAIC Cinema Mobile</h3>
+              <p class="text-sm text-slate-300 mb-6 leading-relaxed">
+                Versão otimizada para smartphones e tablets. Interface sensível ao toque, modo economia de dados e player imersivo na vertical e horizontal.
+              </p>
+              <div class="bg-slate-900/80 rounded-xl p-3.5 border border-slate-800 text-xs text-slate-300 mb-6 space-y-2">
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Tamanho:</span>
+                  <span class="font-bold text-white">~15 MB (Super Leve)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Formato:</span>
+                  <span class="font-bold text-white">Arquivo .APK Seguro</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Status:</span>
+                  <span class="font-bold text-emerald-400">Prévia Pronta para Download</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <button data-download-apk="mobile" class="w-full neon-btn-primary py-3.5 px-4 rounded-xl text-white font-bold text-sm flex items-center justify-center gap-2">
+                <i data-lucide="download" class="w-4 h-4"></i>
+                <span>Baixar APK Mobile (v1.0.0)</span>
+              </button>
+              <button onclick="openDownloadModal('mobile')" class="w-full py-2.5 px-4 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors">
+                <i data-lucide="info" class="w-4 h-4 text-cyan-400"></i>
+                <span>Ver Passo a Passo de Instalação</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Opção 2: Android TV & TV Box -->
+          <div class="glass-glow-card p-8 rounded-3xl border border-indigo-500/40 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center">
+                  <i data-lucide="tv" class="w-6 h-6 text-indigo-400"></i>
+                </div>
+                <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-indigo-950 text-indigo-300 border border-indigo-800">
+                  Leanback UI
+                </span>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">CAIC Cinema TV Box</h3>
+              <p class="text-sm text-slate-300 mb-6 leading-relaxed">
+                Versão desenhada especificamente para TVs e TV Boxes (Xiaomi, Fire TV, MXQ, Aquário). Ícones grandes, foco visual destacado e controle remoto D-pad.
+              </p>
+              <div class="bg-slate-900/80 rounded-xl p-3.5 border border-slate-800 text-xs text-slate-300 mb-6 space-y-2">
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Compatibilidade:</span>
+                  <span class="font-bold text-white">Smart TV Android & TV Box</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Navegação:</span>
+                  <span class="font-bold text-white">Controle Remoto 100%</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Status:</span>
+                  <span class="font-bold text-emerald-400">Prévia Pronta para Download</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <button data-download-apk="tv" class="w-full neon-btn-android py-3.5 px-4 rounded-xl text-white font-bold text-sm flex items-center justify-center gap-2">
+                <i data-lucide="download" class="w-4 h-4"></i>
+                <span>Baixar APK Android TV (v1.0.0)</span>
+              </button>
+              <button onclick="openDownloadModal('tv')" class="w-full py-2.5 px-4 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors">
+                <i data-lucide="info" class="w-4 h-4 text-emerald-400"></i>
+                <span>Instruções para TV Box</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Mini Guia Ilustrado de 3 Passos -->
+        <div class="glass-card p-8 rounded-3xl max-w-4xl mx-auto border-slate-800">
+          <h4 class="text-lg font-bold text-white text-center mb-8 flex items-center justify-center gap-2">
+            <i data-lucide="shield-check" class="w-5 h-5 text-cyan-400"></i>
+            Como Instalar o APK no Android com Segurança
+          </h4>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/60">
+              <div class="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 font-black text-sm flex items-center justify-center mx-auto mb-3">
+                1
+              </div>
+              <h5 class="text-sm font-bold text-white mb-1">Baixe o Arquivo APK</h5>
+              <p class="text-xs text-slate-400">Toque no botão de download acima no seu celular ou transfira para sua TV Box via pendrive/Downloader.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/60">
+              <div class="w-10 h-10 rounded-full bg-indigo-500/20 text-indigo-400 font-black text-sm flex items-center justify-center mx-auto mb-3">
+                2
+              </div>
+              <h5 class="text-sm font-bold text-white mb-1">Permita Fontes Confiáveis</h5>
+              <p class="text-xs text-slate-400">Se o Android solicitar, selecione "Permitir desta fonte" para concluir a instalação com segurança.</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/60">
+              <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-black text-sm flex items-center justify-center mx-auto mb-3">
+                3
+              </div>
+              <h5 class="text-sm font-bold text-white mb-1">Abra e Aproveite</h5>
+              <p class="text-xs text-slate-400">Pronto! Faça login com sua conta ou utilize a degustação gratuita e assista na melhor qualidade.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lista VIP / Notificação de Lançamento -->
+        <div class="mt-12 max-w-2xl mx-auto glass-glow-card p-6 sm:p-8 rounded-3xl text-center border-cyan-500/30">
+          <h4 class="text-xl font-bold text-white mb-2">Quer receber as novidades do APK em primeira mão?</h4>
+          <p class="text-xs text-slate-300 mb-6">
+            Cadastre seu WhatsApp ou e-mail para receber as notificações de atualizações, novos filmes e versões oficiais do aplicativo.
+          </p>
+
+          <form id="notifyForm" class="flex flex-col sm:flex-row gap-3">
+            <input 
+              type="text" 
+              id="notifyInput" 
+              placeholder="Digite seu WhatsApp ou e-mail..." 
+              required
+              class="flex-1 px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700 text-white text-sm placeholder:text-slate-500 focus:outline-none focus:border-cyan-400"
+            >
+            <button type="submit" class="neon-btn-primary px-6 py-3 rounded-xl text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
+              <i data-lucide="bell" class="w-4 h-4"></i>
+              <span>Quero Receber Avisos</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- DESTAQUE: ACESSE JÁ PELO NAVEGADOR (SEM ESPERAR)               -->
+    <!-- ============================================================== -->
+    <section class="py-16 bg-gradient-to-r from-cyan-950/60 via-slate-900 to-indigo-950/60 border-y border-cyan-800/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div>
+            <span class="text-cyan-400 text-xs font-bold uppercase tracking-wider">Acesso Web Imediato</span>
+            <h3 class="text-2xl sm:text-4xl font-black text-white font-display mt-1">
+              Não quer esperar o download? Assista agora na Web!
+            </h3>
+            <p class="text-sm text-slate-300 mt-2 max-w-2xl">
+              Nossa versão Web oficial está 100% no ar em <strong>caic-cinema.vercel.app</strong> com todas as ferramentas de IA, busca inteligente, player sem anúncios e catálogo aberto.
+            </p>
+          </div>
+
+          <div class="flex items-center gap-4 flex-wrap">
+            <a href="https://caic-cinema.vercel.app/" target="_blank" rel="noopener noreferrer" class="neon-btn-primary px-8 py-4 rounded-2xl text-white font-black text-base flex items-center gap-3">
+              <i data-lucide="globe" class="w-5 h-5"></i>
+              <span>Abrir CAIC Cinema Web</span>
+              <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- SEÇÃO DE DISPOSITIVOS E COMPATIBILIDADE                        -->
+    <!-- ============================================================== -->
+    <section id="compatibilidade" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-indigo-400 text-xs font-bold uppercase tracking-widest">Liberdade de Escolha</span>
+          <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 font-display">
+            Assista Onde e Quando Quiser
+          </h2>
+          <p class="text-slate-400 mt-3 text-base">
+            O CAIC Cinema foi construído com arquitetura responsiva que se adapta automaticamente ao tamanho da sua tela.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="glass-card p-6 rounded-2xl text-center group">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+              <i data-lucide="monitor" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-bold text-white text-base mb-1">Computador & Mac</h4>
+            <p class="text-xs text-slate-400">Assista direto pelo Chrome, Edge, Firefox ou Safari sem precisar instalar extensões.</p>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-cyan-400 font-semibold">100% Compatível</div>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl text-center group">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+              <i data-lucide="tv" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-bold text-white text-base mb-1">Android TV & TV Box</h4>
+            <p class="text-xs text-slate-400">Totalmente otimizado para controle remoto D-pad. Xiaomi Mi Box, Fire Stick, Aquário e outros.</p>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-indigo-400 font-semibold">APK & Web TV</div>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl text-center group">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+              <i data-lucide="smartphone" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-bold text-white text-base mb-1">Celulares Android</h4>
+            <p class="text-xs text-slate-400">Instalação direta do APK ou pelo navegador móvel com atalho para a tela inicial.</p>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-emerald-400 font-semibold">APK Disponível</div>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl text-center group">
+            <div class="w-12 h-12 rounded-xl bg-fuchsia-500/10 text-fuchsia-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+              <i data-lucide="tablet" class="w-6 h-6"></i>
+            </div>
+            <h4 class="font-bold text-white text-base mb-1">Tablets & iPads</h4>
+            <p class="text-xs text-slate-400">Aproveite telas de alta definição com menus laterais e controle por toque dinâmico.</p>
+            <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-fuchsia-400 font-semibold">Touch Otimizado</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- FAQ - PERGUNTAS FREQUENTES                                     -->
+    <!-- ============================================================== -->
+    <section id="faq" class="py-20 border-t border-slate-800/80 bg-slate-950/40">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+          <span class="text-cyan-400 text-xs font-bold uppercase tracking-widest">Tire suas Dúvidas</span>
+          <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 font-display">
+            Perguntas Frequentes
+          </h2>
+          <p class="text-slate-400 mt-3 text-sm">
+            Tudo o que você precisa saber sobre o CAIC Cinema, a IA e o aplicativo Android.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          
+          <!-- Pergunta 1 -->
+          <div class="glass-card rounded-2xl overflow-hidden border-slate-800">
+            <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-white text-base hover:text-cyan-400 transition-colors" aria-expanded="false">
+              <span>Como faço para assistir aos filmes agora mesmo?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+            </button>
+            <div class="hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
+              É muito fácil! Você não precisa esperar nada baixar. Basta clicar no botão <a href="https://caic-cinema.vercel.app/" target="_blank" class="text-cyan-400 font-bold underline">Assistir Agora</a> ou acessar <strong>https://caic-cinema.vercel.app/</strong> diretamente em qualquer navegador do seu computador, tablet ou celular.
+            </div>
+          </div>
+
+          <!-- Pergunta 2 -->
+          <div class="glass-card rounded-2xl overflow-hidden border-slate-800">
+            <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-white text-base hover:text-cyan-400 transition-colors" aria-expanded="false">
+              <span>Quando o aplicativo Android oficial estará disponível?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+            </button>
+            <div class="hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
+              O aplicativo está sendo finalizado em versões específicas para <strong>Android Celular</strong> e <strong>Android TV / TV Box</strong> via pacote APK. Você já pode baixar a prévia diretamente pelo botão de download nesta página ou se cadastrar na lista de avisos para receber atualizações automáticas.
+            </div>
+          </div>
+
+          <!-- Pergunta 3 -->
+          <div class="glass-card rounded-2xl overflow-hidden border-slate-800">
+            <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-white text-base hover:text-cyan-400 transition-colors" aria-expanded="false">
+              <span>Como funciona o Curador com Inteligência Artificial?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+            </button>
+            <div class="hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
+              O Curador utiliza o modelo <strong>Google Gemini 3.8 Flash</strong> com chamada de ferramentas (Tool Calling). Você conversa com ele como se fosse um atendente de videolocadora experiente: peça filmes por humor (ex: "quero algo para rir depois de um dia cansativo"), por diretor, época ou tema, e ele pesquisa o catálogo e traz as opções prontas para dar play.
+            </div>
+          </div>
+
+          <!-- Pergunta 4 -->
+          <div class="glass-card rounded-2xl overflow-hidden border-slate-800">
+            <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-white text-base hover:text-cyan-400 transition-colors" aria-expanded="false">
+              <span>O CAIC Cinema funciona no controle remoto da minha TV Box?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+            </button>
+            <div class="hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
+              Sim! Todo o sistema conta com suporte a <strong>D-Pad Navigation</strong>. Você usa as setas direcionais (Cima, Baixo, Esquerda, Direita) e o botão OK do controle remoto para navegar entre os filmes com foco de alto contraste luminoso visível do sofá.
+            </div>
+          </div>
+
+          <!-- Pergunta 5 -->
+          <div class="glass-card rounded-2xl overflow-hidden border-slate-800">
+            <button class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-white text-base hover:text-cyan-400 transition-colors" aria-expanded="false">
+              <span>Preciso pagar mensalidade para testar?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+            </button>
+            <div class="hidden px-6 pb-5 text-sm text-slate-300 leading-relaxed border-t border-slate-800/60 pt-3">
+              Não! A plataforma conta com um período de <strong>degustação gratuita de 7 dias</strong> para novos visitantes experimentarem todos os recursos sem compromisso.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- CTA FINAL                                                      -->
+    <!-- ============================================================== -->
+    <section class="py-24 relative overflow-hidden text-center">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-950/20 to-transparent pointer-events-none"></div>
+      
+      <div class="max-w-4xl mx-auto px-4 relative z-10">
+        <h2 class="text-3xl sm:text-5xl font-black text-white font-display mb-6">
+          Pronto para Transformar suas Noites de Cinema?
+        </h2>
+        <p class="text-slate-300 text-base max-w-2xl mx-auto mb-10 leading-relaxed">
+          Entre agora na plataforma web pelo link oficial ou garanta seu download do app Android para assistir no conforto do seu sofá.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://caic-cinema.vercel.app/" target="_blank" rel="noopener noreferrer" class="neon-btn-primary px-8 py-4 rounded-2xl text-white font-black text-base flex items-center justify-center gap-3 w-full sm:w-auto">
+            <i data-lucide="play" class="w-5 h-5 fill-current"></i>
+            <span>Acessar Plataforma Web Agora</span>
+          </a>
+
+          <button onclick="openDownloadModal()" class="px-8 py-4 rounded-2xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 text-base font-bold flex items-center justify-center gap-3 w-full sm:w-auto transition-all">
+            <i data-lucide="smartphone" class="w-5 h-5 text-emerald-400"></i>
+            <span>Baixar App Android (APK)</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================== -->
+  <!-- RODAPÉ (FOOTER)                                                -->
+  <!-- ============================================================== -->
+  <footer class="border-t border-slate-800/80 bg-[#05070d] py-14 text-sm text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        
+        <!-- Coluna 1: Marca -->
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 p-[2px]">
+              <div class="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center">
+                <i data-lucide="film" class="w-4 h-4 text-cyan-400"></i>
+              </div>
+            </div>
+            <span class="text-xl font-black text-white font-display">
+              CA<span class="text-cyan-400">IC</span> CINEMA
+            </span>
+          </div>
+          <p class="text-xs text-slate-400 max-w-md leading-relaxed">
+            Plataforma de streaming inteligente com curadoria conversacional impulsionada pelo Google Gemini 3.8 Flash. Feito para Web, Celular e Android TV Box.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <button onclick="copySiteLink()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold flex items-center gap-1.5 border border-slate-700 transition-colors">
+              <i data-lucide="share-2" class="w-3.5 h-3.5 text-cyan-400"></i> Compartilhar Link
+            </button>
+            <a href="https://github.com/marcelosevero90/caic-cinema-site" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold flex items-center gap-1.5 border border-slate-700 transition-colors">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Links Rápidos -->
+        <div>
+          <h5 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Navegação</h5>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="https://caic-cinema.vercel.app/" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors flex items-center gap-1">Acessar Web Player <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a></li>
+            <li><a href="#download-app" class="hover:text-cyan-400 transition-colors">Baixar APK Android</a></li>
+            <li><a href="#recursos" class="hover:text-cyan-400 transition-colors">Recursos da IA</a></li>
+            <li><a href="#compatibilidade" class="hover:text-cyan-400 transition-colors">Dispositivos Compatíveis</a></li>
+            <li><a href="#faq" class="hover:text-cyan-400 transition-colors">Perguntas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Links Oficiais -->
+        <div>
+          <h5 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Plataforma Oficial</h5>
+          <ul class="space-y-2.5 text-xs">
+            <li><span class="text-slate-500">Site Oficial:</span> <a href="https://caic-cinema.vercel.app/" target="_blank" class="text-cyan-400 hover:underline">caic-cinema.vercel.app</a></li>
+            <li><span class="text-slate-500">Repositório:</span> <a href="https://github.com/marcelosevero90/caic-cinema-site" target="_blank" class="text-slate-300 hover:underline">caic-cinema-site</a></li>
+            <li><span class="text-slate-500">Status:</span> <span class="text-emerald-400 font-bold">Online 24/7</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="border-t border-slate-800/80 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div>
+          © 2026 CAIC Cinema Streaming. Todos os direitos reservados.
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-slate-400 transition-colors">Termos de Uso</a>
+          <a href="#" class="hover:text-slate-400 transition-colors">Privacidade</a>
+          <a href="https://caic-cinema.vercel.app/" target="_blank" class="text-cyan-400 hover:underline font-bold">Assistir Agora</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================== -->
+  <!-- MODAL DE DOWNLOAD DO APK (NATIVO <dialog>)                     -->
+  <!-- ============================================================== -->
+  <dialog id="downloadModal" class="rounded-3xl shadow-2xl p-0 overflow-hidden" aria-labelledby="modalTitle">
+    <div class="glass-glow-card max-w-xl w-full p-6 sm:p-8 rounded-3xl border border-cyan-500/40 bg-slate-900/95 text-slate-100">
+      
+      <!-- Cabeçalho do Modal -->
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center">
+            <i data-lucide="smartphone" class="w-5 h-5 text-emerald-400"></i>
+          </div>
+          <div>
+            <h3 id="modalTitle" class="text-lg font-bold text-white">Download do App CAIC Cinema</h3>
+            <p class="text-xs text-slate-400">Instalação direta para Android (APK)</p>
+          </div>
+        </div>
+
+        <button data-close-modal="downloadModal" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors" aria-label="Fechar janela">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Abas de Seleção de Dispositivo -->
+      <div class="flex border-b border-slate-800 mt-5 gap-2">
+        <button id="btn-tab-mobile" onclick="switchApkTab('mobile')" class="active-tab flex-1 pb-3 text-xs font-bold border-b-2 border-cyan-400 text-cyan-400 flex items-center justify-center gap-2">
+          <i data-lucide="smartphone" class="w-4 h-4"></i> Celular & Tablet
+        </button>
+        <button id="btn-tab-tv" onclick="switchApkTab('tv')" class="flex-1 pb-3 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-200 flex items-center justify-center gap-2">
+          <i data-lucide="tv" class="w-4 h-4"></i> Android TV / TV Box
+        </button>
+      </div>
+
+      <!-- Conteúdo da Aba: Celular -->
+      <div id="tab-mobile-content" class="py-5 space-y-4">
+        <div class="p-4 rounded-2xl bg-cyan-950/40 border border-cyan-800/40 text-xs text-cyan-200 leading-relaxed">
+          📱 <strong>Versão Mobile (v1.0.0):</strong> Desenvolvida para telas de toque, com baixo consumo de memória e bateria.
+        </div>
+
+        <div class="space-y-2 text-xs text-slate-300">
+          <div class="font-bold text-white">Instruções rápidas:</div>
+          <ol class="list-decimal list-inside space-y-1.5 text-slate-400">
+            <li>Clique no botão abaixo para baixar o instalador APK.</li>
+            <li>Toque na notificação de download ou abra sua pasta "Downloads".</li>
+            <li>Se solicitado, autorize "Instalar apps desconhecidos" nas configurações.</li>
+            <li>Abra o aplicativo e assista seus filmes favoritos!</li>
+          </ol>
+        </div>
+
+        <div class="pt-3">
+          <button data-download-apk="mobile" class="w-full neon-btn-primary py-3.5 px-4 rounded-xl text-white font-extrabold text-sm flex items-center justify-center gap-2">
+            <i data-lucide="download" class="w-5 h-5"></i>
+            <span>Iniciar Download do APK Mobile</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Conteúdo da Aba: TV Box -->
+      <div id="tab-tv-content" class="hidden py-5 space-y-4">
+        <div class="p-4 rounded-2xl bg-indigo-950/40 border border-indigo-800/40 text-xs text-indigo-200 leading-relaxed">
+          📺 <strong>Versão Android TV (Leanback):</strong> Adaptada para tela cheia e controle remoto por setas (D-pad) para Mi Box, Fire TV Stick e TV Boxes comuns.
+        </div>
+
+        <div class="space-y-2 text-xs text-slate-300">
+          <div class="font-bold text-white">Como instalar na sua Smart TV / TV Box:</div>
+          <ol class="list-decimal list-inside space-y-1.5 text-slate-400">
+            <li>Baixe o APK para um pendrive ou use o app <strong>Downloader</strong> da sua TV.</li>
+            <li>Abra o gerenciador de arquivos da TV Box e selecione o APK.</li>
+            <li>Clique em "Instalar" e confirme as permissões do controle.</li>
+            <li>O atalho aparecerá diretamente na tela inicial da TV!</li>
+          </ol>
+        </div>
+
+        <div class="pt-3">
+          <button data-download-apk="tv" class="w-full neon-btn-android py-3.5 px-4 rounded-xl text-white font-extrabold text-sm flex items-center justify-center gap-2">
+            <i data-lucide="download" class="w-5 h-5"></i>
+            <span>Iniciar Download do APK Android TV</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Rodapé do Modal -->
+      <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+        <span>Não quer baixar agora?</span>
+        <a href="https://caic-cinema.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-cyan-400 font-bold hover:underline flex items-center gap-1">
+          Acessar versão Web <i data-lucide="arrow-right" class="w-3 h-3"></i>
+        </a>
+      </div>
+
+    </div>
+  </dialog>
+
+  <!-- Container de Notificações Toast -->
+  <div id="toast-container"></div>
+
+  <!-- Inicialização dos Ícones Lucide e Scripts -->
+  <script src="./app.js"></script>
+  <script>
+    // Ativa ícones Lucide após renderização
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  </script>
+</body>
+</html>
