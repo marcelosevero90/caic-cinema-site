@@ -18,14 +18,14 @@
   <meta property="og:url" content="https://caic-cinema.vercel.app/">
   <meta property="og:title" content="CAIC Cinema Streaming - Plataforma Inteligente com IA">
   <meta property="og:description" content="Assista filmes e séries direto no seu navegador ou baixe o aplicativo para Android TV e Celular. Curadoria conversacional por IA!">
-  <meta property="og:image" content="./assets/og-image.svg">
+  <meta property="og:image" content="./assets/caic-banner-tvbox.png">
 
   <!-- Twitter / X -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://caic-cinema.vercel.app/">
   <meta property="twitter:title" content="CAIC Cinema Streaming - Plataforma Inteligente com IA">
   <meta property="twitter:description" content="Assista filmes e séries direto no seu navegador ou baixe o aplicativo para Android TV e Celular.">
-  <meta property="twitter:image" content="./assets/og-image.svg">
+  <meta property="twitter:image" content="./assets/caic-banner-tvbox.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
@@ -87,22 +87,15 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Marca / Logo -->
-      <a href="#" class="flex items-center gap-3.5 group">
-        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-cyan-500 via-indigo-600 to-fuchsia-600 p-[2px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-shadow">
-          <div class="w-full h-full bg-[#0b0f19] rounded-[14px] flex items-center justify-center">
-            <i data-lucide="film" class="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform"></i>
-          </div>
-        </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="text-2xl font-black tracking-tight text-white font-display">
-              CA<span class="bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-400 bg-clip-text text-transparent">IC</span>
-            </span>
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="./assets/caic-banner-tvbox.png" alt="CAIC Cinema" class="h-10 sm:h-12 w-auto object-contain rounded-xl shadow-md border border-cyan-500/20 group-hover:border-cyan-400/50 group-hover:scale-105 transition-all">
+        <div class="hidden lg:block">
+          <div class="flex items-center gap-1.5">
             <span class="text-xs uppercase font-extrabold tracking-wider px-2 py-0.5 rounded-md bg-cyan-950 text-cyan-300 border border-cyan-700/60 font-body">
               Cinema & IA
             </span>
           </div>
-          <p class="text-[11px] text-slate-400 font-medium">Streaming Inteligente</p>
+          <p class="text-[10px] text-slate-400 font-medium">Streaming Inteligente</p>
         </div>
       </a>
 
@@ -233,19 +226,24 @@
                 
                 <!-- Lado Esquerdo: Banner do Filme em Destaque -->
                 <div class="lg:col-span-7 space-y-4">
-                  <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-950/80 text-indigo-300 border border-indigo-700 text-xs font-bold">
-                    <i data-lucide="film" class="w-3.5 h-3.5"></i> DESTAQUE DA SEMANA
+                  <div class="relative rounded-2xl overflow-hidden border border-cyan-500/30 shadow-2xl group/banner">
+                    <img src="./assets/caic-banner-tvbox.png" alt="CAIC Cinema TV Box" class="w-full h-auto object-cover rounded-2xl group-hover/banner:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between flex-wrap gap-2">
+                      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-900/90 text-cyan-300 border border-cyan-500/40 text-xs font-bold backdrop-blur-md">
+                        <i data-lucide="tv" class="w-3.5 h-3.5"></i> Interface TV Box & Web Oficial
+                      </div>
+                      <a href="https://caic-cinema.vercel.app/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs flex items-center gap-1.5 transition-all shadow-lg">
+                        <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i> Assistir Agora
+                      </a>
+                    </div>
                   </div>
-                  <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Interestelar & Clássicos da Ficção Científica</h3>
-                  <p class="text-sm text-slate-300 leading-relaxed">
-                    Explore galáxias distantes, viagens temporais e mistérios do universo com alta fidelidade de som e imagem. Curadoria refinada para os amantes da sétima arte.
-                  </p>
-                  <div class="flex items-center gap-3 pt-2">
-                    <a href="https://caic-cinema.vercel.app/" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs flex items-center gap-2 transition-all">
-                      <i data-lucide="play" class="w-4 h-4 fill-current"></i> Dar Play Agora
-                    </a>
+                  <div class="flex items-center gap-3 pt-1">
                     <button onclick="openDownloadModal('tv')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold flex items-center gap-2 transition-all">
-                      <i data-lucide="tv" class="w-4 h-4 text-cyan-400"></i> Modo TV Box
+                      <i data-lucide="tv" class="w-4 h-4 text-cyan-400"></i> Baixar para TV Box
+                    </button>
+                    <button onclick="openDownloadModal('mobile')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold flex items-center gap-2 transition-all">
+                      <i data-lucide="smartphone" class="w-4 h-4 text-emerald-400"></i> Baixar para Celular
                     </button>
                   </div>
                 </div>
@@ -733,14 +731,7 @@
         <!-- Coluna 1: Marca -->
         <div class="md:col-span-2 space-y-4">
           <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 p-[2px]">
-              <div class="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center">
-                <i data-lucide="film" class="w-4 h-4 text-cyan-400"></i>
-              </div>
-            </div>
-            <span class="text-xl font-black text-white font-display">
-              CA<span class="text-cyan-400">IC</span> CINEMA
-            </span>
+            <img src="./assets/caic-banner-tvbox.png" alt="CAIC Cinema" class="h-10 w-auto object-contain rounded-xl shadow-md border border-cyan-500/20">
           </div>
           <p class="text-xs text-slate-400 max-w-md leading-relaxed">
             Plataforma de streaming inteligente com curadoria conversacional impulsionada pelo Google Gemini 3.8 Flash. Feito para Web, Celular e Android TV Box.
